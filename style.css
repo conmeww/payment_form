@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 13px;
+  color: #a6a6a6;
+}
+
+a {
+  color: #494949;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+}
+
+/* main btn */
+
+.btn {
+  cursor: pointer;
+  padding: 23px 106px;
+  font-style: normal;
+  margin-bottom: 24px;
+  font-weight: 500;
+  border: none;
+  font-size: 18px;
+  line-height: 18px;
+  background: #ff335f;
+  border-radius: 56px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+.btn:disabled {
+  background-color: #a6a6a6;
+}
+
+.btn:disabled:hover {
+  box-shadow: none;
+}
+
+.btn:disabled {
+  background-color: #a6a6a6;
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 16px #ff335f;
+}
+
+.btn:active {
+  background-color: #e1264f;
+}
+
+/* form */
+
+.form {
+  width: 412px;
+  height: 240px;
+  margin: 0 auto;
+  padding: 60px 56px 42px 56px;
+  margin-top: 120px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(64, 64, 64, 0.08),
+    0px 4px 16px rgba(64, 64, 64, 0.16);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+label {
+  margin-bottom: 14px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 13px;
+  letter-spacing: 0.3px;
+  color: #a6a6a6;
+}
+
+input::placeholder {
+  color: #f2f2f2;
+}
+
+input {
+  height: 22px;
+  padding-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid #f2f2f2;
+  transition: 0.3s ease;
+}
+
+input:hover {
+  border-bottom: 1px solid #ff335f;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.cardnumber {
+  position: relative;
+  grid-column: 1/3;
+}
+
+.cardnumber::before {
+  position: absolute;
+  content: url(./img/bank\ logo.svg);
+  top: -37px;
+  right: -24px;
+}
+
+.expire,
+.cvv {
+  width: 124px;
+}
+
+.expire {
+  margin-right: 32px;
+}
+
+.cvv {
+  position: relative;
+}
+
+label.error {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.4px;
+  color: #ff3b30;
+  display: block;
+}
+
+input.error {
+  border-bottom: 1px solid red;
+  font-weight: 300;
+  color: red;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* footer */
+
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.icons img {
+  margin-left: 20px;
+}
+
+.secure {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.secure::before {
+  content: url(./img/Subtract.svg);
+  position: absolute;
+  left: -18px;
+  top: 3px;
+}
+
+span[tooltip-text]:hover:after {
+  content: attr(tooltip-text);
+  padding: 8px 8px;
+  color: white;
+  position: absolute;
+  left: -60px;
+  bottom: 120%;
+  width: 275px;
+  height: auto;
+  background: #0679ca;
+  border-radius: 10px;
+}
+
+.help-tooltip:hover {
+  position: relative;
+}
+
+.tooltip {
+  color: #a6a6a6;
+  display: inline-block;
+  position: absolute;
+  top: -3px;
+  left: 65px;
+  cursor: pointer;
+}
+
+.q_mark {
+  position: relative;
+}
+
+.q_mark::before {
+  content: "?";
+  color: #a6a6a6;
+  font-size: 10px;
+  height: 18px;
+  width: 18px;
+  font-weight: 900;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.q_mark:hover::before {
+  background-color: #a6a6a6;
+  color: #fff;
+}
+
+.tooltip .tooltiptext {
+  font-family: inherit;
+  font-size: 12px;
+  visibility: hidden;
+  width: 152px;
+  background-color: #595959;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 13px;
+  margin-left: -67px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #595959 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.checkbox {
+  display: block;
+  height: 24px;
+  position: relative;
+  margin-top: 32px;
+  padding-left: 34px;
+  padding-top: 4px;
+  margin-bottom: 72px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  color: #595959;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.checkbox span {
+  height: 24px;
+  width: 24px;
+  border: 2px solid #a6a6a6;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox--use-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.checkbox input:checked ~ .checkbox--use-card {
+  background-color: #ff335f;
+  border: none;
+}
+
+.checkbox--use-card:after {
+  content: "";
+  position: absolute;
+  display: none;
+  transition: all 0.2s ease;
+}
+
+.checkbox input:checked ~ .checkbox--use-card:after {
+  display: block;
+}
+
+.checkbox .checkbox--use-card:after {
+  left: 7px;
+  top: 4px;
+  width: 8px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

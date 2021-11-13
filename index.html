@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+         rel="stylesheet"
+         />
+      <link rel="stylesheet" href="style.css" />
+      <title>Payment form</title>
+   </head>
+   <body>
+      <div class="container">
+         <form class="form" id="form">
+            <!-- CARD NUMBER FIELD-->
+            <div class="cardnumber wrapper">
+               <label for="cardnumber">
+               <span class="upper-bryant small-bold">Номер карты</span>
+               </label>
+               <input
+                  type="text"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  id="cardnumber"
+                  minlength="16"
+                  maxlength="19"
+                  name="cardnumber"
+                  class="cardnumber"
+                  id="cardnumber"
+                  placeholder="1234 5678 1234 5678"
+                  required
+                  />
+            </div>
+            <!-- EXPIRE DATE FIELD -->
+            <div class="expire wrapper">
+               <label for="expire">Месяц / год</label>
+               <input
+                  type="text"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  id="expire"
+                  class="expire"
+                  name="expire"
+                  maxlength="5"
+                  minlength="5"
+                  placeholder="ММ / ГГ"
+                  required
+                  />
+            </div>
+            <!-- CVV FIELD -->
+            <div class="cvv wrapper">
+               <label class="cvv-label" for="cvv">CVV / CVC</label>
+               <div class="tooltip">
+                  <span class="q_mark">
+                  </span>
+                  <span class="tooltiptext">Три цифры с обратной стороны карты</span>
+               </div>
+               <input
+                  type="tel"
+                  id="cvv"
+                  minlength="3"
+                  maxlength="3"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  class="cvv"
+                  name="cvv"
+                  placeholder="123"
+                  required
+                  />
+            </div>
+         </form>
+         <!-- CHECKBOX -->
+         <label class="checkbox"
+            >Сохранить карту для следующих покупок
+         <input type="checkbox" />
+         <span class="checkbox--use-card"></span>
+         </label>
+         <!-- SUBMIT BTN-->
+         <button
+            id="btn"
+            class="btn btn--confirm submit-button"
+            type="submit"
+            disabled
+            >
+         Оплатить
+         </button>
+         <span
+            >Нажимая на кнопку «‎Перевести»‎, вы </br>  соглашаетесь с <a href="">условиями
+         оферты</a> </span
+            >
+      </div>
+      <!-- FOOTER -->
+      <footer class="footer">
+         <div class="icons">
+            <img src="./img/visa-logo.svg" alt="visa" /><img
+               src="./img/mc_symbol 1.svg"
+               alt="master card"
+               /><img src="./img/Group 5.svg" alt="mir" />
+         </div>
+         <span class="secure">
+         Данные банковской карты будут <br />переданы в зашифрованном виде
+         </span>
+         <span>Заказ №112480</span>
+      </footer>
+      <!--script-->
+      <script src="script/jquery-1.11.3.min.js"></script>
+      <script src="script/bootstrap.tooltip.js"></script>
+      <script src="script/jquery.validate.js"></script>
+      <script src="script/script.js"></script>
+   </body>
+</html>
